@@ -25,7 +25,7 @@ Route::get('halo2', function () {
     return "<marquee>Halo, Selamat datang</marquee>";
 });
 
-Route::get('blog', function () {
+Route::get('/blog2', function () {
     return view('blog');
 });
 
@@ -81,4 +81,11 @@ Route::get('news', function () {
 Route::get('perkalian', 'App\Http\Controllers\DosenController@index');
 Route::get('show', 'App\Http\Controllers\DosenController@showBlog');
 
+Route::get('/pegawai/{nama}', 'App\Http\Controllers\DosenController@shownama');
 
+Route::get('/formulir', 'App\Http\Controllers\PegawaiController@formulir');
+Route::post('/formulir/proses', 'App\Http\Controllers\PegawaiController@proses');
+
+Route::get('/blog', 'App\Http\Controllers\BlogController@home');
+Route::get('/blog/tentang', 'App\Http\Controllers\BlogController@tentang');
+Route::get('/blog/kontak', 'App\Http\Controllers\BlogController@kontak');
