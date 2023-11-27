@@ -31,5 +31,5 @@
 		</tr>
         @endfor
 	</table>
- 
+
 @endsection

@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/pertemuan2.css') }}">
-    <title>Pertemuan 2</title>
-</head>
-<body>
-    <h2>www.malasngoding.com</h2>
-	<h3>Data Pegawai</h3>
+@extends('master2')
+@section('title', 'Database Pegawai')
 
-	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+@section('judul_halaman')
+<h2>www.malasngoding.com</h2>
+<h3>Data Pegawai</h3>
+
+<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
 	
-	<br/>
-	<br/>
+<br/>
+<br/>
+@endsection
 
-	<table border="1">
+@section('konten')
+	<p>Cari Data Pegawai :</p>
+	<form action="/pegawai/cari" method="GET">
+		<input class="form-control" type="text" name="cari" placeholder="Cari Pegawai berdasarkan nama .." value="{{ old('cari') }}">
+		<br>
+		<input type="submit" value="CARI" class="btn btn-primary">
+		<br>
+	</form>
+	<table class="table table-striped table-hover">
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -30,12 +34,12 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
-				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+				<a href="/pegawai/view/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
+				<a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
+				<a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-</body>
-</html>
+	{{ $pegawai->links() }}
+@endsection

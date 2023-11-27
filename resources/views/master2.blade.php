@@ -43,14 +43,11 @@
         <br/>
 
         <!-- bagian judul halaman blog -->
-        <h3> @yield('judul_halaman') </h3>
+        @yield('judul_halaman') 
 
 
         <!-- bagian konten blog -->
         @yield('konten')
-
-        @yield('header')
-        @yield('isihalaman')
         
         <br/>
         <br/>
