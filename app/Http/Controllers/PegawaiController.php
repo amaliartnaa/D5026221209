@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Pegawai;
 
 class PegawaiController extends Controller
 {
@@ -81,5 +82,11 @@ class PegawaiController extends Controller
         DB::table('pegawai')->where('pegawai_id',$id)->delete();
 
         return redirect('/pegawai');
+    }
+
+    public function view($id) {
+        $pegawai = Pegawai::find($id);
+
+        return view('view', compact('pegawai'));
     }
 }
