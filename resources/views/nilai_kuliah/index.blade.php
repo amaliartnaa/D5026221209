@@ -19,6 +19,7 @@
             <th>SKS</th>
             <th>Nilai Huruf</th>
             <th>Bobot</th>
+            <th>Opsi</th>
         </tr>
         @foreach($data as $d)
             <tr>
@@ -26,10 +27,32 @@
                 <td>{{ $d->nrp }}</td>
                 <td>{{ $d->nilai_angka }}</td>
                 <td>{{ $d->sks }}</td>
-                <td>{{ $d->nilai_huruf }}</td>
-                <td>{{ $d->bobot }}</td>
+                <td
+                @php
+                    $nilaiHuruf = '';
+        
+                    if ($d->nilai_angka <= 40) {
+                        $nilaiHuruf = 'D';
+                    } elseif ($d->nilai_angka <= 60) {
+                        $nilaiHuruf = 'C';
+                    } elseif ($d->nilai_angka <= 80) {
+                        $nilaiHuruf = 'B';
+                    } else {
+                        $nilaiHuruf = 'A';
+                    }
+                @endphp
+                >{{ $nilaiHuruf }}</td>
+                <td>{{ $d->nilai_angka * $d->sks }}</td>
+                <td>
+                    <a href="/nilai/view/{{ $d->id }}" class="btn btn-success">View</a>
+                    <a href="/nilai/edit/{{ $d->id }}" class="btn btn-warning">Edit</a>
+                    <a href="/nilai/hapus/{{ $d->id }}" class="btn btn-danger">Hapus</a>
+                </td>
             </tr>
         @endforeach
     </table>
-    <a href="{{ route('nilai.create') }}">Tambah Data</a>
+	{{ $data->links() }}
+    <br/>
+    <br/>
+    <a href="nilai/tambah" class="btn btn-primary">Tambah Data</a>
 @endsection

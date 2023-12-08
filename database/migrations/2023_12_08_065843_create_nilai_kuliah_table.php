@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('nilai_kuliah', function (Blueprint $table) {
             $table->id();
             $table->string('nrp');
-            $table->integer('nilai_angka');
+            $table->integer('nilai_angka')->default(0);
             $table->integer('sks');
             $table->timestamps();
         });

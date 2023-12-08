@@ -7,7 +7,7 @@
 	<br/>
 	<br/>
 
-	<form action="{{ route('nilai.store') }}" method="post" class="form-horizontal">
+	<form action="/nilai" method="post" class="form-horizontal">
 		{{ csrf_field() }}
 		<div class = "form-group row">
             <label for = "nrp" class = "col-sm-2 control-label">NRP</label>
@@ -16,9 +16,9 @@
             </div>
         </div>
 		<div class="form-group row">
-			<label for="nilai-angka" class="col-sm-2 control-label">Nilai Angka</label>
+			<label for="nilai_angka" class="col-sm-2 control-label">Nilai Angka</label>
 			<div class="col-sm-10">
-				<input type="number" name="nilai-angka" class="form-control" id="nilai-angka" placeholder="Masukkan nilai angka">
+				<input type="number" name="nilai_angka" value="{{ old('nilai_angka') }}" class="form-control" id="nilai_angka" placeholder="Masukkan nilai angka" required>
 			</div>
 		</div>
 		<div class="form-group row">

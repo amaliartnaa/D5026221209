@@ -102,9 +102,14 @@ Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 Route::get('/pegawai/view/{id}', 'App\Http\Controllers\PegawaiController@view');
 
-Route::resource('nilai', NilaiKuliahController::class);
 
+Route::get('/nilai','App\Http\Controllers\NilaiKuliahController@index');
+Route::get('/nilai/tambah','App\Http\Controllers\NilaiKuliahController@create');
 Route::get('/nilai/view/{id}', 'App\Http\Controllers\NilaiKuliahController@view');
+Route::get('/nilai/hapus/{id}','App\Http\Controllers\NilaiKuliahController@hapus');
+Route::post('/nilai/update','App\Http\Controllers\NilaiKuliahController@update');
+Route::get('/nilai/edit/{id}','App\Http\Controllers\NilaiKuliahController@edit');
+Route::post('/nilai','App\Http\Controllers\NilaiKuliahController@store');
 
 
 Route::get('/topi', 'App\Http\Controllers\TopiController@topi');

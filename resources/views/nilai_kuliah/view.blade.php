@@ -7,26 +7,21 @@
         <div class="col-md-6">
             @foreach($data as $d)
             <div class="row mb-3">
-                <div class="col-sm-2">Nama</div>
+                <div class="col-sm-2">NRP</div>
                 <div class="col-sm-1">:</div>
-                <div class="col-sm-5">{{ $p->pegawai_nama }}</div>
+                <div class="col-sm-5">{{ $d->nrp }}</div>
             </div>
             <div class="row mb-3">
-                <div class="col-sm-2">Jabatan</div>
+                <div class="col-sm-2">Nilai Angka</div>
                 <div class="col-sm-1">:</div>
-                <div class="col-sm-5">{{ $p->pegawai_jabatan }}</div>
+                <div class="col-sm-5">{{ $d->nilai_angka }}</div>
             </div>
             <div class="row mb-3">
-                <div class="col-sm-2">Umur</div>
+                <div class="col-sm-2">SKS</div>
                 <div class="col-sm-1">:</div>
-                <div class="col-sm-5">{{ $p->pegawai_umur }}</div>
+                <div class="col-sm-5">{{ $d->sks }}</div>
             </div>
-            <div class="row mb-5">
-                <div class="col-sm-2">Alamat</div>
-                <div class="col-sm-1">:</div>
-                <div class="col-sm-8">{{ $p->pegawai_alamat }}</div>
-            </div>
-                <a href="/pegawai" class="btn btn-primary">OK</a>
+                <a href="/nilai" class="btn btn-primary">OK</a>
             @endforeach
         </div>
     </div>
