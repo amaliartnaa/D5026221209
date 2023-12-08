@@ -112,4 +112,10 @@ Route::get('/nilai/edit/{id}','App\Http\Controllers\NilaiKuliahController@edit')
 Route::post('/nilai','App\Http\Controllers\NilaiKuliahController@store');
 
 
-Route::get('/topi', 'App\Http\Controllers\TopiController@topi');
+Route::get('/topi', 'App\Http\Controllers\TopiController@index');
+Route::get('/topi/tambah','App\Http\Controllers\TopiController@create');
+Route::get('/topi/view/{id}', 'App\Http\Controllers\TopiController@view');
+Route::get('/topi/hapus/{id}','App\Http\Controllers\TopiController@hapus');
+Route::post('/topi/update','App\Http\Controllers\TopiController@update');
+Route::get('/topi/edit/{id}','App\Http\Controllers\TopiController@edit');
+Route::post('/topi','App\Http\Controllers\TopiController@store');

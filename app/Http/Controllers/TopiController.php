@@ -7,17 +7,16 @@ use Illuminate\Support\Facades\DB;
 
 class TopiController extends Controller
 {
-    public function topi () {
-        $topi = DB::table('topi');
+    public function index() {
+        $topi = DB::table('topi')->paginate(10);
 
-        return view('topi', ['topi' => $topi]);
+        return view('topi/index', ['topi' => $topi]);
     }
 
     public function store(Request $request) {
         DB::table('topi')->insert([
-            'topi_kode' => $request->kode,
-            'topi_merk' => $request->merk,
-            'topi_stock' => $request->stock,
+            'merk_topi' => $request->merk,
+            'stock_topi' => $request->stock,
             'tersedia' => $request->tersedia
         ]);
 
