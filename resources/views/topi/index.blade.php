@@ -1,8 +1,8 @@
 @extends('master2')
-@section('title', 'Database Nilai Mahasiswa')
+@section('title', 'Database Topi')
 
 @section('judul_halaman')
-<h3>Nilai Kuliah</h3>
+<h3>Data Topi</h3>
 
 {{-- <a href="/pegawai/tambah"> + Tambah Pegawai Baru</a> --}}
 	
@@ -17,6 +17,7 @@
             <th>Merk Topi</th>
             <th>Stock Topi</th>
             <th>Tersedia</th>
+            <th>Opsi</th>
         </tr>
         @foreach($topi as $t)
             <tr>
@@ -35,5 +36,5 @@
 	{{ $topi->links() }}
     <br/>
     <br/>
-    <a href="nilai/tambah" class="btn btn-primary">Tambah Data</a>
+    <a href="topi/tambah" class="btn btn-primary">Tambah Data</a>
 @endsection
