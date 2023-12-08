@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NilaiKuliahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,3 +101,10 @@ Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus')
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 Route::get('/pegawai/view/{id}', 'App\Http\Controllers\PegawaiController@view');
+
+Route::resource('nilai', NilaiKuliahController::class);
+
+Route::get('/nilai/view/{id}', 'App\Http\Controllers\NilaiKuliahController@view');
+
+
+Route::get('/topi', 'App\Http\Controllers\TopiController@topi');
