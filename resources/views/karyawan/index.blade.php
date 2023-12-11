@@ -17,36 +17,20 @@
             <th>Nama Lengkap</th>
             <th>Divisi</th>
             <th>Departemen</th>
+            <th>Hapus Data</th>
         </tr>
         @foreach($karyawan as $k)
-            <tr
-            {{-- @php
-            $nilaiHuruf = '';
-
-            if ($d->nilai_angka <= 40) {
-                $nilaiHuruf = 'D';
-            } elseif ($d->nilai_angka <= 60) {
-                $nilaiHuruf = 'C';
-            } elseif ($d->nilai_angka <= 80) {
-                $nilaiHuruf = 'B';
-            } else {
-                $nilaiHuruf = 'A';
-            }
-        @endphp --}}
-        >
+            <tr>
                 <td>{{ $k->kode_pegawai }}</td>
-                <td>{{ $k->nama_lengkap }}</td>
+                <td>{{ Str::upper($k->nama_lengkap) }}</td>
                 <td>{{ $k->divisi }}</td>
-                <td>{{ $k->departemen }}</td>
+                <td>{{ Str::lower($k->departemen) }}</td>
                 <td>
-                    {{-- <a href="/karyawan/view/{{ $k->kode_pegawai }}" class="btn btn-success">View</a>
-                    <a href="/karyawan/edit/{{ $k->kode_pegawai }}" class="btn btn-warning">Edit</a> --}}
                     <a href="/karyawan/hapus/{{ $k->kode_pegawai }}" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
         @endforeach
     </table>
-	{{ $karyawan->links() }}
     <br/>
     <br/>
     <a href="karyawan/tambah" class="btn btn-primary">Tambah Data</a>

@@ -119,3 +119,9 @@ Route::get('/topi/hapus/{id}','App\Http\Controllers\TopiController@hapus');
 Route::post('/topi/update','App\Http\Controllers\TopiController@update');
 Route::get('/topi/edit/{id}','App\Http\Controllers\TopiController@edit');
 Route::post('/topi','App\Http\Controllers\TopiController@store');
+
+Route::get('/karyawan', 'App\Http\Controllers\KaryawanController@index');
+// Route::get('karyawan', 'App\Http\Controllers\KaryawanController@getNama');
+Route::get('/karyawan/tambah','App\Http\Controllers\KaryawanController@tambah');
+Route::get('/karyawan/hapus/{id}','App\Http\Controllers\KaryawanController@hapus');
+Route::post('/karyawan','App\Http\Controllers\KaryawanController@store');
